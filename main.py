@@ -15,16 +15,7 @@ def index():
 @app.route('/', methods=['POST'])
 def process_form():
     button_python = request.form.get('button_python')
-    button_discord = request.form.get('button_discord')
-    button_html = request.form.get('button_html')
-    button_db = request.form.get('button_db')
-    email = request.form.get('email')
-    comentario = request.form.get('text')
-    with open('comentarios.txt', 'a') as f:
-            f.write("Tu correo es:" + email + "\n")
-            f.write("Tu comentario es:" + comentario + "\n")
-    return render_template('index.html', button_python=button_python, button_discord=button_discord, button_html=button_html, button_db=button_db)
-
+    return render_template('index.html', button_python=button_python)
 
 
 if __name__ == "__main__":
